@@ -188,6 +188,26 @@ If you wish to control the power to the BME280 sensor programmatically:
 Pin 4 (ESP32) → VCC (BME280)
 
 
+          +-------------------------+
+          |         ESP32            |
+          |                          |
+          |      +-----+     +-----+ |
+     3.3V |------| VCC |     | VCC | |--> 3.3V
+          |      +-----+     +-----+ |
+     GND  |------| GND |     | GND | |--> GND
+          |      +-----+     +-----+ |
+     SDA  |------| SDA |     | SDA | |--> GPIO 21 (I2C Data Line)
+          |      +-----+     +-----+ |
+     SCL  |------| SCL |     | SCL | |--> GPIO 22 (I2C Clock Line)
+          |      +-----+     +-----+ |
+          |                          |
+          |  +---------+   +------+  |
+  GPIO 2  |--| LED Anode | | LED |   |--> LED Cathode to GND
+          |  +---------+   +------+  |
+          +-------------------------+
+
+
+
 SOURCE CODE
 
 #include <Arduino.h>
