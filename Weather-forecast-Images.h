@@ -49,3 +49,5 @@ const uint8_t inactiveSymbole[] PROGMEM = {
     B00000000
 };
 
+
+
